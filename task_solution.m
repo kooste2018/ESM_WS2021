@@ -8,10 +8,13 @@ stations=allstations(find(contains(allstations,'M_nchen')));%selected stations n
 N=numel(stations);
 data=alldata(:,[{'Zeitpunkt'},stations]);%selected data including time
 % task 2, convert to ppm, formular see https://www.teesing.com/en/page/library/tools/ppm-mg3-converter
-% concentration (ppm) = 24.45 x concentration (mg/m3) ÷ molecular weight
-% concentration (ppb) = 24.45 x concentration (\mu g/m3) ÷ molecular weight
+% concentration (ppb) = (molecular volume *  mass densities) ÷ molecular weight
+m_w = 46.0055;% NO2 molecular weight
+T = 283;% temperature
+P = 1000;% pressure
+m_v = 22.41 * (T/273) * (1013/P);% molecular volume (litres)
 for i=1:N
-    data.(stations{i})=data.(stations{i})*24.45/46;
+data.(stations{i}) = (m_v * data.(stations{i})) / m_w ;
 end
 % task 3, plot last two days ppm in one plot. but there is no data on
 % 31.12. thus I choose data from 29. and 30. December 
