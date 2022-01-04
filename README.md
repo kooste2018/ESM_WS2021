@@ -7,4 +7,26 @@ we use the December 2021 NO2 data from https://www.lfu.bayern.de/luft/immissions
   - Lothstraße (LOT)
   - Allach
   - Johanneskirchen 
+## task 4 
+Question: Is there a correlation between traffic and NO2 concentration for the whole day and is there another effect that also needs to be considered?
+Answer: From the second figure we can see a significant correlation between both data, since the more traffic during the day leads to the higher NO2 concentration. However, we cannot come to a conclusion that traffic dominates NO2 ppm, because the it always increases with intraday delay, which indicates the accumulated NO2 emission by traffic or other possible reasons. More observations are reqiured to support an argument with stronger correlations. 
+## task 5
+1. how to open a .kml/.kmz file with google maps?
+ - Open Google My Maps.
+ - Create a new map.
+ - Press import into the upper left corner.
+ - Now open the KML file. Or drag the KML file into the import window.
+ - You did it! You have successfully imported a KML into Google Maps.
+2. possible solution: we create a 20x20 matrix and interplate with some predefined function or manuelly. **the question here is the cooridinate of stations in this matrix.** then we overlay this matrix as a mask to the given .kmz file. see reference.  
+
+
+
+
+reference: 
+
+https://www.researchgate.net/post/How-to-import-KMZ-KML-file-into-Matlab 
+
+https://www.mathworks.com/help/map/exporting-vector-data-to-kml.html
+
+https://www.mathworks.com/help/map/ref/kmlwritepolygon.html#bu2jsw9-1-latitude
 
