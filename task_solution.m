@@ -7,7 +7,7 @@ allstations=alldata.Properties.VariableNames;
 stations=allstations(find(contains(allstations,'M_nchen')));%selected stations names
 N=numel(stations);
 data=alldata(:,[{'Zeitpunkt'},stations]);%selected data including time
-% task 2, convert to ppm, formular see https://www.teesing.com/en/page/library/tools/ppm-mg3-converter
+% task 2, convert to ppb, formular see https://www.teesing.com/en/page/library/tools/ppb-mg3-converter
 % concentration (ppb) = (molecular volume *  mass densities) ÷ molecular weight
 m_w = 46.0055;% NO2 molecular weight
 T = 283;% temperature
@@ -16,7 +16,7 @@ m_v = 22.41 * (T/273) * (1013/P);% molecular volume (litres)
 for i=1:N
 data.(stations{i}) = (m_v * data.(stations{i})) / m_w ;
 end
-% task 3, plot last two days ppm in one plot. but there is no data on
+% task 3, plot last two days ppb in one plot. but there is no data on
 % 31.12. thus I choose data from 29. and 30. December 
 data29=find(contains(data.Zeitpunkt,'29.12.2021'));
 data30=find(contains(data.Zeitpunkt,'30.12.2021'));
@@ -29,7 +29,7 @@ for i=1:N
     hold on
 end
 xlabel('time')
-ylabel('NO2 ppm')
+ylabel('NO2 ppb')
 legend(stations)
 title('Dec. 29. and 30. NO2 data from 5 stations')
 % task 4, correlation with traffic data
@@ -51,14 +51,15 @@ for i=1:3
     hold on
 end
 xlabel('time')
-ylabel('NO2 ppm and scaled traffic data')
+ylabel('NO2 ppb and scaled traffic data')
 legend([stations,'Landshuter Allee traffic per hour', 'Landshuter Allee traffic all day',...
     'Lothstraße traffic per hour', ' Lothstraße traffic all day','Stachus traffic per hour','Stachus traffic all day']);
 title('Dec. 29. and 30. NO2 data from 5 stations with traffic data')
 % task 5
-average_ppm=cell(1,N);
+average_ppb=cell(1,N);
 for i=1:N
-    average_ppm{i}=mean(plotdata{:,i+1});
+    average_ppb{i}=mean(plotdata{:,i+1});
 end
-average_ppm=[stations;average_ppm];
+average_ppb=[stations;average_ppb];
+
 

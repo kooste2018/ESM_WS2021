@@ -8,8 +8,8 @@ we use the December 2021 NO2 data from https://www.lfu.bayern.de/luft/immissions
   - Allach
   - Johanneskirchen 
 ## task 4 
-Question: Is there a correlation between traffic and NO2 concentration for the whole day and is there another effect that also needs to be considered?
-Answer: From the second figure we can see a significant correlation between both data, since the more traffic during the day leads to the higher NO2 concentration. However, we cannot come to a conclusion that traffic dominates NO2 ppm, because the it always increases with intraday delay, which indicates the accumulated NO2 emission by traffic or other possible reasons. More observations are reqiured to support an argument with stronger correlations. 
+- Question: Is there a correlation between traffic and NO2 concentration for the whole day and is there another effect that also needs to be considered?
+- Answer: From the second figure we can see a significant correlation between both data, since the more traffic during the day leads to the higher NO2 concentration. However, we cannot come to a conclusion that traffic dominates NO2 ppm, because the it always increases with intraday delay, which indicates the accumulated NO2 emission by traffic or other possible reasons. More observations are reqiured to support an argument with stronger correlations. 
 ## task 5
 1. how to open a .kml/.kmz file with google maps?
  - Open Google My Maps.
