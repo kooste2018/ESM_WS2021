@@ -55,11 +55,5 @@ ylabel('NO2 ppb and scaled traffic data')
 legend([stations,'Landshuter Allee traffic per hour', 'Landshuter Allee traffic all day',...
     'Lothstraße traffic per hour', ' Lothstraße traffic all day','Stachus traffic per hour','Stachus traffic all day']);
 title('Dec. 29. and 30. NO2 data from 5 stations with traffic data')
-% task 5
-average_ppb=cell(1,N);
-for i=1:N
-    average_ppb{i}=mean(plotdata{:,i+1});
-end
-average_ppb=[stations;average_ppb];
 
 
